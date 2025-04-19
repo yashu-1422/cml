@@ -53,6 +53,19 @@ print(f"Standard Deviation: {std_dev:.2f}")
 print(f"Coefficient of Variation: {cv:.2f}%")
 
 ```
+# sd and cv
+```python
+#grouped frequency data
+x = np.array([1, 2, 3, 4, 5])
+f = np.array([2, 3, 4, 5, 6])
+N = np.sum(f)
+mean = np.sum(x * f) / N
+variance = np.sum(f * (x - mean)**2) / N
+std_dev = np.sqrt(variance)
+cv = (std_dev / mean) * 100
+
+print(f"Mean: {mean:.2f}, SD: {std_dev:.2f}, CV: {cv:.2f}%")
+```
 # central moments
 ```python
 import numpy as np
