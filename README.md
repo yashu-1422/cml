@@ -151,31 +151,7 @@ print("L:\n", L)
 print("U:\n", U)
 ```
 
-**Gauss Elimination (manual method using NumPy):**
-```python
-import numpy as np
 
-def gauss_elimination(a, b):
-    n = len(b)
-    for i in range(n):
-        for j in range(i+1, n):
-            factor = a[j][i] / a[i][i]
-            for k in range(i, n):
-                a[j][k] -= factor * a[i][k]
-            b[j] -= factor * b[i]
-
-    x = np.zeros(n)
-    for i in range(n-1, -1, -1):
-        x[i] = (b[i] - np.dot(a[i][i+1:], x[i+1:])) / a[i][i]
-    return x
-
-A = np.array([[2, 3, 1], [1, 2, 3], [3, 1, 2]], float)
-b = np.array([9, 6, 8], float)
-x = gauss_elimination(A, b)
-print("Solution:", x)
-```
-
----
 
 ### ✅ 2. Trapezoidal Rule (5 Marks)
 ```python
