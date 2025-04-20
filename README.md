@@ -161,7 +161,27 @@ model.fit(x, y)
 print(f"Regression Line: y = {model.coef_[0]:.2f}x + {model.intercept_:.2f}")
 ```
 
----
+**Simple Linear Regression: 2**
+Write python program to obtain regression line y on x for the following data:
+X 16 22 36 44 48
+Y 29 34 45 38 47
+Also find value of y for 𝑥 = 24. Attach the print of output. 
+
+```python
+X = np.array([16, 22, 36, 44, 48]).reshape(-1, 1)
+Y = np.array([29, 34, 45, 38, 47])
+
+model = LinearRegression()
+model.fit(X, Y)
+
+# Predict y for x = 24
+x_val = 24
+y_pred = model.predict([[x_val]])
+
+print(f"Regression Line: y = {model.coef_[0]:.2f}x + {model.intercept_:.2f}")
+print(f"Predicted y for x = 24: {y_pred[0]:.2f}")
+
+```
 
 ### ✅ 6. Binomial & Poisson Distributions (15 Marks)
 
