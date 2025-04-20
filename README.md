@@ -200,12 +200,28 @@ print("Binomial Probabilities:", probs)
 **Poisson Distribution:**
 ```python
 from scipy.stats import poisson
+import numpy as np
 
-lam = 2
-x = np.arange(0, 10)
+# Given data
+x = np.array([0, 1, 2, 3, 4, 5])
+f = np.array([142, 158, 67, 27, 5, 1])
+total = np.sum(f)
+
+# Step 1: Calculate mean (λ)
+lam = np.sum(x * f) / total
+print("Mean (λ):", round(lam, 4))
+
+# Step 2: Calculate Poisson probabilities for x values
 probs = poisson.pmf(x, lam)
 
-print("Poisson Probabilities:", probs)
+# Step 3: Calculate expected frequencies
+expected_freq = total * probs
+
+# Step 4: Display results
+print("\nx\tObserved f\tPoisson Prob\tExpected f")
+for xi, fi, pi, ei in zip(x, f, probs, expected_freq):
+    print(f"{xi}\t{fi}\t\t{pi:.4f}\t\t{ei:.2f}")
+
 ```
 
 ---
