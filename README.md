@@ -24,7 +24,7 @@ solution = lu_solve((LU, piv), B)
 
 print("Solution:", solution)
 ```
-# trapezoidal rule - Program 3
+# trapezoidal rule - Program 1
 ```python
 import numpy as np 
 
@@ -55,7 +55,28 @@ area = np.sum((y[1:] + y[:-1]) * h / 2)
 print("Approximate area under the curve:", area)
 
 ```
+# trapezoidal rule - 3
+question - Compute the value of the integral numerically ∫ [log(𝑥 + 1) + sin 2𝑥]𝑑𝑥 by using trapezoidal rule taking ℎ = 0.1. 
 
+```python
+import numpy as np
+
+# Step size
+h = 0.1
+
+# Generate x values from 0 to 0.8 with step h
+x = np.arange(0, 0.8 + h, h)
+
+# Define the function f(x) = ln(x+1) + sin(2x)
+y = np.log(x + 1) + np.sin(2 * x)
+
+# Apply Trapezoidal Rule
+area = np.sum((y[1:] + y[:-1]) * h / 2)
+
+print("Approximate value of the integral:", area)
+
+
+```
 
 ### ✅ 3. SD and CV (15 Marks)
 
