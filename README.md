@@ -189,12 +189,22 @@ print(f"Predicted y for x = 24: {y_pred[0]:.2f}")
 ```python
 from scipy.stats import binom
 
-n = 5
+n = 6
 p = 0.5
-x = np.arange(0, n+1)
-probs = binom.pmf(x, n, p)
 
-print("Binomial Probabilities:", probs)
+# (1) P(X = 5)
+prob_5 = binom.pmf(5, n, p)
+
+# (2) P(X ≥ 5) = P(5) + P(6)
+prob_at_least_5 = binom.pmf(5, n, p) + binom.pmf(6, n, p)
+
+# (3) P(X ≤ 5)
+prob_at_most_5 = binom.cdf(5, n, p)
+
+print(f"P(X=5): {prob_5:.4f}")
+print(f"P(X≥5): {prob_at_least_5:.4f}")
+print(f"P(X≤5): {prob_at_most_5:.4f}")
+
 ```
 
 **Poisson Distribution:**
