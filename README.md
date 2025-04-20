@@ -35,6 +35,26 @@ area = np.sum((y[1:] + y[:-1]) * np.diff(x) / 2)
 
 print("Area under the curve:", area)
 ```
+# trapezoidal rule - 2
+question - integral 0 to 2 (1/1+X**2)dx h=0.25
+```python
+import numpy as np
+
+# Step size
+h = 0.25
+
+# Generate x values from 0 to 2 with step h
+x = np.arange(0, 2 + h, h)
+
+# Define the function f(x) = 1 / (1 + x^2)
+y = 1 / (1 + x**2)
+
+# Apply Trapezoidal Rule
+area = np.sum((y[1:] + y[:-1]) * h / 2)
+
+print("Approximate area under the curve:", area)
+
+```
 
 
 ### ✅ 3. SD and CV (15 Marks)
